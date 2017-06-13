@@ -1,0 +1,15 @@
+<form action="" #f='ngForm' (submit) = 'updateUser(f.value)' method="post">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input class="form-control" type="text" name="username" placeholder="nhap username" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input class="form-control" type="text" name="age" placeholder="nhap age" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="diachi">Dia chi</label>
+    <input class="form-control" type="text" name="diachi" placeholder="nhap dia chi" ngModel>
+  </div>
+  <input class="btn btn-primary" type="submit" value="Update">
+</form>
