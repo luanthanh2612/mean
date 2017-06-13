@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//khai bao UserSchema
 const userSchema = mongoose.Schema({
     username:{
         type: String,
@@ -19,7 +19,7 @@ const User = module.exports = mongoose.model('Person',userSchema);
 
 module.exports.SaveUser = (newUser,callback)=>{
     if(!newUser.username == undefined || !newUser.age == undefined || !newUser.diachi == undefined){
-        
+            
     }  
     newUser.save(callback)
 }

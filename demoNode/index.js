@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //route
 app.use('/user',user);
-
+//home 
 app.get('/',(req,res)=>{
     res.render('gioithieu');
 })
