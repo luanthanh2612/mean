@@ -23,7 +23,7 @@ export class UpdateComponent implements OnInit {
         diachi : value.diachi
       }
       this.userSerive.updateUser(newUser).subscribe(result=>{
-          
+          console.log(result);
       });
 
   }

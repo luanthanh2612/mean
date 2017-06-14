@@ -13,14 +13,7 @@ const store = multer.diskStorage({
 
 const upload = multer({storage : store});
 
-mongoose.connect('mongodb://localhost:27017/DBTest',(err)=>{
-    if(err){
-        console.log("Loi ket noi toi database");
-    }else{
-        console.log("ket noi toi database");
-    }
-});
-mongoose.Promise = global.Promise;
+
 
 router.post('/create',(req,res)=>{
     let newUser = new User({

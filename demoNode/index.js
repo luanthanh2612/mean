@@ -2,10 +2,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const app = express();
 
 const user = require('./routes/user.js');
+const nguoidung = require('./routes/nguoidung.js');
+
+//conect mongoose
+
+mongoose.connect('mongodb://localhost:27017/DBTest',(err)=>{
+    if(err){
+        console.log("Loi ket noi toi database");
+    }else{
+        console.log("ket noi toi database");
+    }
+});
+mongoose.Promise = global.Promise;
 
 //cors
 app.use(cors());
@@ -22,6 +35,7 @@ app.set('view engine','ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 //route
+app.use('/nguoidung',nguoidung);
 app.use('/user',user);
 //home 
 app.get('/',(req,res)=>{
